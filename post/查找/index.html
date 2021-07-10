@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>查找 // greenrattan</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://greenrattan.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="查找"/>
+<meta name="twitter:description" content="查找算法分类：
+　1）静态查找和动态查找；
+　注：静态或者动态都是针对查找表而言的。动态表指查找表中有删除和插入操作的表。
+　2）无序查找和有序查找。
+　无序查找：被查找数列有序无序均可；
+　有序查找：被查找数列必须为有序数列。
+　**平均查找长度（Average Search Length，ASL）：**需和指定key进行比较的关键字的个数的期望值，称为查找算法在查找成功时的平均查找长度。
+　对于含有n个数据元素的查找表，查找成功的平均查找长度为：ASL = P i*C i的和。 P i：查找表中第i个数据元素的概率。 C i：找到第i个数据元素时已经比较过的次数。
+有序表的折半查找基本思想：（2021/6/8）
+在有序表中，取中间元素作为比较对象，若给定值与中间元素的关键码相等，则查找成功；若给定值小于中间元素的关键码，则在中间元素的左半区继续查找；若给定值大于中间元素的关键码，则在中间元素的右半区继续查找。不断重复上述查找过程，直到查找成功，或所查找的区域无数据元素，查找失败。
+【步骤】 ① low=1；high=length； // 设置初始区间
+② 当low&gt;high 时，返回查找失败信息// 表空，查找失败 ③ low≤high，mid=(low&#43;high)/2; //确定该区间的中点位置
+​ a. 若kx&lt;tbl.elem[mid].key，high = mid-1；转② // 查找在左半区进行
+​ b. 若kx&gt;tbl.elem[mid].key，low = mid&#43;1； 转② // 查找在右半区进行
+​ c. 若kx=tbl.elem[mid].key，返回数据元素在表中位置// 查找成功
+有序表按关键码排列如下：
+7，14，18，21，23，29，31，35，38，42，46，49，52
+示例：
+{ int mid,low,high, flag = 0; low = 0; high = length; /* ①设置初始区间* / while(low &lt;= high) /* ②表空测试*/ { /* 非空,进行比较测试*/ mid = (low &#43; high)/2; /* ③得到中点*/ if(kx &lt; a[mid]) high = mid-1; /* 调整到左半区*/ else if(kx &gt; a[mid]) low = mid&#43;1; /* 调整到右半区*/ else { /* 查找成功,元素位置设置到flag 中*/ flag=mid; break; } } return flag; } 重要 常用的排序算法的时间复杂度和空间复杂度"/>
+
+    <meta property="og:title" content="查找" />
+<meta property="og:description" content="查找算法分类：
+　1）静态查找和动态查找；
+　注：静态或者动态都是针对查找表而言的。动态表指查找表中有删除和插入操作的表。
+　2）无序查找和有序查找。
+　无序查找：被查找数列有序无序均可；
+　有序查找：被查找数列必须为有序数列。
+　**平均查找长度（Average Search Length，ASL）：**需和指定key进行比较的关键字的个数的期望值，称为查找算法在查找成功时的平均查找长度。
+　对于含有n个数据元素的查找表，查找成功的平均查找长度为：ASL = P i*C i的和。 P i：查找表中第i个数据元素的概率。 C i：找到第i个数据元素时已经比较过的次数。
+有序表的折半查找基本思想：（2021/6/8）
+在有序表中，取中间元素作为比较对象，若给定值与中间元素的关键码相等，则查找成功；若给定值小于中间元素的关键码，则在中间元素的左半区继续查找；若给定值大于中间元素的关键码，则在中间元素的右半区继续查找。不断重复上述查找过程，直到查找成功，或所查找的区域无数据元素，查找失败。
+【步骤】 ① low=1；high=length； // 设置初始区间
+② 当low&gt;high 时，返回查找失败信息// 表空，查找失败 ③ low≤high，mid=(low&#43;high)/2; //确定该区间的中点位置
+​ a. 若kx&lt;tbl.elem[mid].key，high = mid-1；转② // 查找在左半区进行
+​ b. 若kx&gt;tbl.elem[mid].key，low = mid&#43;1； 转② // 查找在右半区进行
+​ c. 若kx=tbl.elem[mid].key，返回数据元素在表中位置// 查找成功
+有序表按关键码排列如下：
+7，14，18，21，23，29，31，35，38，42，46，49，52
+示例：
+{ int mid,low,high, flag = 0; low = 0; high = length; /* ①设置初始区间* / while(low &lt;= high) /* ②表空测试*/ { /* 非空,进行比较测试*/ mid = (low &#43; high)/2; /* ③得到中点*/ if(kx &lt; a[mid]) high = mid-1; /* 调整到左半区*/ else if(kx &gt; a[mid]) low = mid&#43;1; /* 调整到右半区*/ else { /* 查找成功,元素位置设置到flag 中*/ flag=mid; break; } } return flag; } 重要 常用的排序算法的时间复杂度和空间复杂度" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://greenrattan.github.io/post/%E6%9F%A5%E6%89%BE/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-05-31T14:35:32&#43;08:00" />
+<meta property="article:modified_time" content="2021-05-31T14:35:32&#43;08:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://greenrattan.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>greenrattan</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">查找</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          May 31, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <p><strong>查找算法分类：</strong></p>
+<p>　　1）静态查找和动态查找；</p>
+<p>　　　　注：静态或者动态都是针对查找表而言的。动态表指查找表中有删除和插入操作的表。</p>
+<p>　　2）无序查找和有序查找。</p>
+<p>　　　　无序查找：被查找数列有序无序均可；</p>
+<p>　　　　有序查找：被查找数列必须为有序数列。</p>
+<p>　　 **平均查找长度（Average Search Length，ASL）：**需和指定key进行比较的关键字的个数的期望值，称为查找算法在查找成功时的平均查找长度。</p>
+<p>　　对于含有n个数据元素的查找表，查找成功的平均查找长度为：ASL = P i*C i的和。
+　　P i：查找表中第i个数据元素的概率。
+　　C i：找到第i个数据元素时已经比较过的次数。</p>
+<p><strong>有序表的折半查找基本思想：</strong>（2021/6/8）</p>
+<p>在有序表中，取中间元素作为比较对象，若给定值与中间元素的关键码相等，则查找成功；若给定值小于中间元素的关键码，则在中间元素的左半区继续查找；若给定值大于中间元素的关键码，则在中间元素的右半区继续查找。不断重复上述查找过程，直到查找成功，或所查找的区域无数据元素，查找失败。</p>
+<p>【步骤】
+① low=1；high=length； // 设置初始区间<br>
+② 当low&gt;high 时，返回查找失败信息// 表空，查找失败  <br>
+③ low≤high，mid=(low+high)/2; //确定该区间的中点位置</p>
+<p>​      a. 若kx&lt;tbl.elem[mid].key，high = mid-1；转② // 查找在左半区进行</p>
+<p>​      b. 若kx&gt;tbl.elem[mid].key，low  = mid+1； 转② // 查找在右半区进行</p>
+<p>​      c. 若kx=tbl.elem[mid].key，返回数据元素在表中位置// 查找成功</p>
+<p>有序表按关键码排列如下：</p>
+<p>7，14，18，21，23，29，31，35，38，42，46，49，52</p>
+<p>示例：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/greenrattan/image-study@master/20210620/1343038411_6715.3ubft4wug5k0.jpg" alt=""></p>
+<pre><code class="language-int" data-lang="int">  {
+    int mid,low,high, flag = 0;     
+    low = 0; high = length;                   /* ①设置初始区间* /   
+    while(low &lt;= high)                        /* ②表空测试*/ 
+{    /* 非空,进行比较测试*/ 
+    mid = (low + high)/2;                /*    ③得到中点*/
+
+    if(kx &lt; a[mid]) high = mid-1;        /*   调整到左半区*/
+    
+    else if(kx &gt; a[mid]) low = mid+1;    /* 调整到右半区*/
+    else {                                /* 查找成功,元素位置设置到flag 中*/
+        flag=mid;
+        break;
+    }         
+}    
+   return flag;
+}
+</code></pre><h2 id="重要">重要</h2>
+<p>常用的排序算法的时间复杂度和空间复杂度</p>
+<table>
+<thead>
+<tr>
+<th>排序法</th>
+<th>最差时间分析</th>
+<th>平均时间复杂度</th>
+<th>稳定度</th>
+<th>空间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>冒泡排序</td>
+<td>O(n2)</td>
+<td>O(n2)</td>
+<td>稳定</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>插入排序</td>
+<td>O(n2)</td>
+<td>O(n2)</td>
+<td>稳定</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>选择排序</td>
+<td>O(n2)</td>
+<td>O(n2)</td>
+<td>稳定</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>二叉树排序</td>
+<td>O(n2)</td>
+<td>O(n*log2n)</td>
+<td>不一顶</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>快速排序</td>
+<td>O(n2)</td>
+<td>O(n*log2n)</td>
+<td>不稳定</td>
+<td>O(log2n)~O(n)</td>
+</tr>
+<tr>
+<td>堆排序</td>
+<td>O(n*log2n)</td>
+<td>O(n*log2n)</td>
+<td>不稳定</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>希尔排序</td>
+<td>O(n2)</td>
+<td>O(nlogn)-O(n2)</td>
+<td>不稳定</td>
+<td>O(1)</td>
+</tr>
+</tbody>
+</table>
+<p>查找算法时间复杂度</p>
+<table>
+<thead>
+<tr>
+<th>查找</th>
+<th>平均时间复杂度</th>
+<th>查找条件</th>
+<th>算法描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>顺序查找</td>
+<td>O(n)</td>
+<td>无序或有序队列</td>
+<td>按顺序比较每个元素，直到找到关键字为止</td>
+</tr>
+<tr>
+<td>二分查找（折半查找）</td>
+<td>O(logn)</td>
+<td>有序数组</td>
+<td>查找过程从数组的中间元素开始，如果中间元素正好是要查找的元素，则搜素过程结束；如果某一特定元素大于或者小于中间元素，则在数组大于或小于中间元素的那一半中查找，而且跟开始一样从中间元素开始比较。　如果在某一步骤数组为空，则代表找不到。</td>
+</tr>
+<tr>
+<td>二叉排序树查找</td>
+<td>O(logn)</td>
+<td>二叉排序树</td>
+<td>在二叉查找树b中查找x的过程为：1. 若b是空树，则搜索失败2. 若x等于b的根节点的数据域之值，则查找成功；3. 若x小于b的根节点的数据域之值，则搜索左子树4. 查找右子树。</td>
+</tr>
+<tr>
+<td>哈希表法（散列表）</td>
+<td>O(1)</td>
+<td>先创建哈希表（散列表）</td>
+<td>根据键值方式(Key value)进行查找，通过散列函数，定位数据元素。</td>
+</tr>
+<tr>
+<td>分块查找</td>
+<td>O(logn)</td>
+<td>无序或有序队列</td>
+<td>将n个数据元素&quot;按块有序&quot;划分为m块（m ≤ n）。每一块中的结点不必有序，但块与块之间必须&quot;按块有序&quot;；即第1块中任一元素的关键字都必须小于第2块中任一元素的关键字；而第2块中任一元素又都必须小于第3块中的任一元素，……。然后使用二分查找及顺序查找。</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
